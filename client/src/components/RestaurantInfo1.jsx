@@ -1,8 +1,9 @@
 import React from 'react';
 import { Typography, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const RestaurantInfo1 = (props) => {
-    const { setCounter, restaurantData, restaurantChoice, setSavedList } = props;
+    const { goBack, setCounter, restaurantData, restaurantChoice, setSavedList } = props;
     const thisRestaurant = restaurantData.tenRestaurantsObject[restaurantChoice]
     const restaurantName = thisRestaurant.name;
     // const restaurantImage = thisRestaurant.photos[0]; // decided to use the next 2 images available
@@ -10,6 +11,7 @@ const RestaurantInfo1 = (props) => {
     const restaurantImage3 = thisRestaurant.photos[2];
     const restaurantId = thisRestaurant.id;
     const restaurantLoc = thisRestaurant.location;
+    const navigate = useNavigate()
 
     let city = [restaurantLoc.display_address[0], restaurantLoc.display_address[1], restaurantLoc.display_address[2]].join(" ")
     let linkString = ""
@@ -69,8 +71,10 @@ const RestaurantInfo1 = (props) => {
             <div style={{ display: "flex", justifyContent: "center", marginTop: "7px" }}>
                 <Button variant="link" variant="contained" color="error" href={thisRestaurant.url}>more details on Yelp</Button>
             </div>
-            <div style={{ display: "flex", justifyContent: "center", marginTop: "7px" }}>
-                <Button variant="contained" color="secondary" onClick={() => setCounter()} >choose a different restaurant</Button>
+            <div style={{ display: "flex", justifyContent: "space-evenly", marginTop: "7px" }}>
+                <Button variant="contained" color="secondary" onClick={() => goBack()} >back to restaurants</Button>
+                
+                <Button sx={{backgroundColor:"blue"}}variant="contained" color="secondary" onClick={() => navigate('/')} >Go to Dashboard</Button>
             </div>
 
         </div>

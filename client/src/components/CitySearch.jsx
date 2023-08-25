@@ -58,6 +58,9 @@ const CitySearch = (props) => {
                 <br />
                 <Button sx={{mt: 2}} disabled={city.length < 3} variant="contained" color="success" type="submit" onClick={handleClick} >Submit</Button>
             </div>
+            <div style={{position:'fixed', bottom:"25px", width:"100%", textAlign:"center"}}>
+                <p>* location data provided by MapBox API</p>
+            </div>
         </div>
     );
 };

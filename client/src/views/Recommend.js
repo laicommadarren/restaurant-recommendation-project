@@ -264,7 +264,7 @@ const Recommend = (props) => {
             {counter === 7 &&
                 <div class="container" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "100%" }}>
                     <RestaurantInfo1
-                        setCounter={() => setCounter(counterForGoingBack)}
+                        goBack={() => setCounter(counterForGoingBack)}
                         restaurantData={restaurantData}
                         restaurantChoice={restaurantChoice}
                         savedList={savedList}

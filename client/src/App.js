@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Recommend from './views/Recommend';
 import AboutUs from './views/AboutUs';
 import SavedList from './views/SavedList';
