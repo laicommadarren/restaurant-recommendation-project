@@ -19,7 +19,9 @@ npm install
 ```sh
 npm run test
 ```
+## YELP FUSION API KEY
 
+Go to Yelp Developers https://www.yelp.com/developers/v3/manage_app (make an account if you don't have one) to obtain an API, and put it in your .env file as "YELP_API_KEY=<your api key here>"
 ## Show your support
 
 Give a ⭐️ if this project helped you!
