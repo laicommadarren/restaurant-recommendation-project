@@ -6,13 +6,15 @@ That was my inspiration to create this project, which utilizes Yelp Fusion API t
 
 This app would be suitable for indecisive people, people who don't have the time to do research especially at a moment's notice, and people who just don't want to make such a decision for one reason or the other.
 
-This app prototype is designed to be used in mobile view.
+
 
 ## Installation
 
 see client/server README.md files for installation instructions
 
 ## Usage
+
+Preliminary notes: This app prototype is designed to be used in mobile view.
 
 ### Navigation Bar
 
