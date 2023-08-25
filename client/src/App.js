@@ -1,14 +1,16 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom'
+import Recommend from './views/Recommend';
+import Welcome from './views/Welcome';
+import SavedList from './views/SavedList';
 
 function App() {
     return (
         <div className="App">
             <Routes>
-                <Route path="/" element={<Navigate to="/pirates" />} />
-                <Route path="/pirates" element={<List />} />
-                <Route path="/pirate/new" element={<Create />} />
-                <Route path="/pirate/:id" element={<DisplayOne />} />
+                <Route path="/" element={<Welcome />} />
+                <Route path="/start" element={<Recommend />} />
+                <Route path="/list" element={<SavedList />} />
             </Routes>
 
         </div>
