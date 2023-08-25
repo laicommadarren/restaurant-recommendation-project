@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import Button from '../components/Button';
 import TwoButtonsWithPics from '../components/TwoButtonsWithPics';
 import CitySearch from '../components/CitySearch';
 import RestaurantInfo1 from '../components/RestaurantInfo1';
+import RestaurantInfo2 from '../components/RestaurantInfo2';
+import RestaurantInfoUpdated from '../components/RestaurantInfoUpdated';
 import AfterCategoryChoice from '../components/AfterCategoryChoice';
 import AfterCategoryOptions from '../components/AfterCategoryOptions';
 import ButtonMUI from '../components/ButtonMUI';
 import '@fontsource/roboto/700.css';
-import { Typography, Checkbox, FormControlLabel } from '@mui/material';
+import { Typography, Checkbox, FormControlLabel, Button } from '@mui/material';
 import MealType from '../components/MealType';
 
 // I want to have this go through the questions. 
-const Recommend = () => {
-    const [counter, setCounter] = useState(0);
+const Recommend = (props) => {
+    const {savedList, setSavedList} = props;
+    const [counter, setCounter] = useState(1);
     const [searchParams, setSearchParams] = useState({
         location: "Los Angeles, CA",
         price: { "1": false, "2": false, "3": false, "4": false, "all": true }
@@ -47,10 +49,8 @@ const Recommend = () => {
     }
 
     const handlePrice = () => {
-        console.log(searchParams.location)
         setCounter(4);
         let priceString = "";
-        console.log(searchParams.price["1"]);
         if (searchParams.price["1"]) priceString += "&price=1";
         if (searchParams.price["2"]) priceString += "&price=2";
         if (searchParams.price["3"]) priceString += "&price=3";
@@ -60,10 +60,8 @@ const Recommend = () => {
     }
 
     const handleSearchTerm = (e) => {
-        console.log(e.target.value);
         setSearchParams({ ...searchParams, term: e.target.value })
         setCounter(5);
-        console.log(searchParams);
 
     }
 
@@ -72,16 +70,11 @@ const Recommend = () => {
         setSearchParams({ ...searchParams, category: e.target.value })
         setCounter(6);
         setCurrentCategory(e.target.name)
-        console.log(e.target.value);
-
     }
     const handleRestaurantClick = (e) => {
         setCounterForGoingBack(counter);
         setCounter(7);
         setRestaurantChoice(e.target.name);
-        console.log(e.target.name)
-        // 
-
     }
 
     return (
@@ -250,22 +243,22 @@ const Recommend = () => {
             }
             {loaded && counter === 6.1 &&
                 <div class="container" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "100%" }}>
-                    <AfterCategoryOptions restaurantData={restaurantData} index1={2} index2={3} setCounter={setCounter} counter={counter} handleRestaurantClick={handleRestaurantClick} />
+                    <AfterCategoryOptions restaurantData={restaurantData} index1={2} index2={3} setCounter={setCounter} counter={counter} handleRestaurantClick={handleRestaurantClick} currentCategory={currentCategory}/>
                 </div>
             }
             {counter === 6.2 &&
                 <div class="container" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "100%" }}>
-                    <AfterCategoryOptions restaurantData={restaurantData} index1={4} index2={5} setCounter={setCounter} counter={counter} handleRestaurantClick={handleRestaurantClick} />
+                    <AfterCategoryOptions restaurantData={restaurantData} index1={4} index2={5} setCounter={setCounter} counter={counter} handleRestaurantClick={handleRestaurantClick} currentCategory={currentCategory}/>
                 </div>
             }
             {counter === 6.3 &&
                 <div class="container" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "100%" }}>
-                    <AfterCategoryOptions restaurantData={restaurantData} index1={6} index2={7} setCounter={setCounter} counter={counter} handleRestaurantClick={handleRestaurantClick} />
+                    <AfterCategoryOptions restaurantData={restaurantData} index1={6} index2={7} setCounter={setCounter} counter={counter} handleRestaurantClick={handleRestaurantClick} currentCategory={currentCategory}/>
                 </div>
             }
             {counter === 6.4 &&
                 <div class="container" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "100%" }}>
-                    <AfterCategoryOptions restaurantData={restaurantData} index1={8} index2={9} setCounter={setCounter} counter={counter} handleRestaurantClick={handleRestaurantClick} />
+                    <AfterCategoryOptions restaurantData={restaurantData} index1={8} index2={9} setCounter={setCounter} counter={counter} handleRestaurantClick={handleRestaurantClick} currentCategory={currentCategory}/>
                 </div>
             }
             {counter === 7 &&
@@ -274,6 +267,8 @@ const Recommend = () => {
                         setCounter={() => setCounter(counterForGoingBack)}
                         restaurantData={restaurantData}
                         restaurantChoice={restaurantChoice}
+                        savedList={savedList}
+                        setSavedList={setSavedList}
                     />
                 </div>
             }

@@ -34,11 +34,11 @@ const AfterCategoryChoice = (props) => {
             axios.get(url)
                 .then(response => {
                     setRestaurantData(response.data);
-                    console.log(response.data);
+                    // console.log(response.data);
                     setLoaded(true);
                 })
                 .catch(err => {
-                    console.log(err);
+                    // console.log(err);
                     setLoaded(false);
                 });
         }
@@ -64,9 +64,12 @@ const AfterCategoryChoice = (props) => {
                 </div>
             }
             {!loaded &&
-                <div>
-                    <h2>Loading...</h2>
-                    <h3>(It may take a few seconds to finish loading)</h3>
+                <div style={{textAlign:"center"}}>
+                    <h3>Loading appetite...</h3>
+                    <div style={{display:"flex", justifyContent:"center"}}>
+                        <img style={{marginTop:"15px", width:"250px", height:"250px"}} src="https://media.tenor.com/18riz9S5RUkAAAAd/sally-linefriends-eating-cake-sally.gif"/>
+                    </div>
+                    
                 </div>
             }
 

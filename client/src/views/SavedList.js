@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 
-const SavedList = () => {
+const SavedList = (props) => {
 
-    const [savedList, setSavedList] = useState([])
+    const {savedList, setSavedList} = props;
 
-    const handleClick ={
+    const getDetails = () => {
+        // an axios api call
+        // yelp link maybe
         
+    }
+    const deleteRestaurantFromList = () => {
+        setSavedList() // filter 
     }
 
     return (
@@ -14,8 +19,8 @@ const SavedList = () => {
                 <th>Restaurant Name</th>
                 <th>City</th>
                 <th>Price</th>
-                <th>tried?</th>
-                <th>favorite</th>
+                <th>Tried?</th>
+                <th>Favorite</th>
                 <th>Actions </th>
             </tr>
             {savedList.map(restaurant => {
@@ -30,8 +35,11 @@ const SavedList = () => {
                         <input type="checkbox"></input>
                     </td>
                     <td>
-                        <button onClick={handleClick}>
-                            Details
+                        <button onClick={getDetails}>
+                            Details (Yelp)
+                        </button>
+                        <button onClick={deleteRestaurantFromList}>
+                            Remove
                         </button>
                     </td>
                 </tr>

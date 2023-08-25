@@ -1,17 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Recommend from './views/Recommend';
-import Welcome from './views/Welcome';
+import AboutUs from './views/AboutUs';
 import SavedList from './views/SavedList';
+import Dashboard from './views/Dashboard';
+import NavBar from './components/NavBar';
+import SavedListPlaceholder from './views/SavedListPlaceholder';
 
 function App() {
+    const [savedList, setSavedList] = useState([])
+
     return (
         <div className="App">
+            <NavBar />
             <Routes>
-                <Route path="/" element={<Welcome />} />
-                <Route path="/start" element={<Recommend />} />
-                <Route path="/list" element={<SavedList />} />
+                <Route path="/" element={<Dashboard />}/>
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/start" element={<Recommend savedList={savedList} setSavedList={setSavedList} />} />
+                <Route path="/list" element={<SavedListPlaceholder savedList={savedList} setSavedList={setSavedList} />} />
             </Routes>
+            <div style={{position:'fixed', bottom:"0px", width:"100%", textAlign:"center"}}>
+                <p>* restaurant data provided by Yelp Fusion API</p>
+            </div>
 
         </div>
     );

@@ -3,7 +3,7 @@ import TwoButtonsWithPics from './TwoButtonsWithPics';
 import { Typography, Button } from '@mui/material';
 
 const AfterCategoryOptions = (props) => {
-    const { restaurantData, setCounter, index1, index2, handleRestaurantClick, counter } = props;
+    const { restaurantData, setCounter, index1, index2, handleRestaurantClick, counter, currentCategory } = props;
 
 
 

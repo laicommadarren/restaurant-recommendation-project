@@ -2,10 +2,10 @@ import React from 'react';
 import { Typography, Button } from '@mui/material';
 
 const RestaurantInfo1 = (props) => {
-    const { setCounter, restaurantData, restaurantChoice } = props;
+    const { setCounter, restaurantData, restaurantChoice, setSavedList } = props;
     const thisRestaurant = restaurantData.tenRestaurantsObject[restaurantChoice]
     const restaurantName = thisRestaurant.name;
-    const restaurantImage = thisRestaurant.photos[0];
+    // const restaurantImage = thisRestaurant.photos[0]; // decided to use the next 2 images available
     const restaurantImage2 = thisRestaurant.photos[1];
     const restaurantImage3 = thisRestaurant.photos[2];
     const restaurantId = thisRestaurant.id;
@@ -17,21 +17,36 @@ const RestaurantInfo1 = (props) => {
         if (city[i] === " ") linkString += "+";
         else linkString += city[i];
     }
-    console.log(linkString)
 
 
     const mapsLink = `https://www.google.com/maps/place/${linkString}`
     return (
-        <div style={{width:"100%"}}>
-            <div style={{ textAlign: "center" , marginTop:"10px"}}>
+        <div style={{ width: "100%" }}>
+            <div style={{ textAlign: "center", marginTop: "10px" }}>
                 <Typography variant="h5">{restaurantName}</Typography>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-around", marginTop:"10px", width:"100%"}}>
-                <img style={{ borderRadius:"10px", width: "175px", height: "175px", marginLeft: "auto", marginRight: "auto" }} src={restaurantImage2} alt={restaurantName} />
-                <img style={{ borderRadius:"10px", width: "175px", height: "175px", marginLeft: "auto", marginRight: "auto" }} src={restaurantImage3} alt="breakfast" />
+            <div style={{ display: "flex", justifyContent: "space-around", marginTop: "10px", width: "100%" }}>
+                <img style={{ borderRadius: "10px", width: "175px", height: "175px", marginLeft: "auto", marginRight: "auto" }} src={restaurantImage2} alt={restaurantName} />
+                <img style={{ borderRadius: "10px", width: "175px", height: "175px", marginLeft: "auto", marginRight: "auto" }} src={restaurantImage3} alt="breakfast" />
             </div>
-
-            <p style={{ textAlign: "center" }}><b>Yelp Rating:</b><br />
+            <div style={{ textAlign: "center", marginTop: "5px" }}>
+                <b>Yelp Rating:</b><br />
+                <b>{thisRestaurant.rating} / 5 </b> (with <b><i>{thisRestaurant.review_count}</i></b> reviews)
+            </div>
+            <div style={{ textAlign: "center", marginTop: "5px" }}>
+                <b>Categories:</b><br />
+                <i>{thisRestaurant.categories.map((cat) => cat.title).join(", ")}</i>
+            </div>
+            <div style={{ textAlign: "center", marginTop: "5px" }}>
+                <b>Price:</b><br />
+                {thisRestaurant.price}
+            </div>
+            <div style={{ textAlign: "center", marginTop: "5px" }}>
+                <b>Address:</b><br />
+                {restaurantLoc.address1} {restaurantLoc.address2} {restaurantLoc.address3}<br />
+                {restaurantLoc.city}, {restaurantLoc.state} {restaurantLoc.zip_code}
+            </div>
+            {/* <p style={{ textAlign: "center" }}><b>Yelp Rating:</b><br />
                 <b>{thisRestaurant.rating} / 5 </b> (with <b><i>{thisRestaurant.review_count}</i></b> reviews)
             </p>
             <p style={{ textAlign: "center" }}>
@@ -47,8 +62,8 @@ const RestaurantInfo1 = (props) => {
                 {restaurantLoc.address1} {restaurantLoc.address2} {restaurantLoc.address3}<br />
                 {restaurantLoc.city}, {restaurantLoc.state} {restaurantLoc.zip_code}
 
-            </p>
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            </p> */}
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
                 <Button variant="link" variant="contained" color="primary" href={mapsLink}>get directions with Google maps</Button>
             </div>
             <div style={{ display: "flex", justifyContent: "center", marginTop: "7px" }}>
