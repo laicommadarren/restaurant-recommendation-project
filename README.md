@@ -81,3 +81,14 @@ Clicking "Choose a different restaurant" will go back to the previous page where
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+## Contact
+
+LinkedIn:
+https://www.linkedin.com/in/laicommadarren/
+
+## Acknowledgements
+Yelp Fusion API provides all of the restaurant data.
+
+https://javascript.plainenglish.io/create-a-simple-city-autocomplete-field-in-react-f7675d249c74#5057 was used to get a template for creating autocomplete function for location input.
+
+
