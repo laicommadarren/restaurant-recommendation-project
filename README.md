@@ -46,7 +46,7 @@ Click Submit to proceed to the next option.
 Choose between breakfast, lunch, or dinner. Click the respective button to select it and proceed to the next option.
 
 #### 5. Choose food category:
-In this prototype there are 10 options to choose from.
+In this prototype there are 10 preselected options to choose from.
 
 Each page shows 2 options, with "more options" and "previous options" buttons allowing you to scan through the food categories.
 
