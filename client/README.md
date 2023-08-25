@@ -23,6 +23,10 @@ npm run start
 npm run test
 ```
 
+## MAPBOX API KEY
+
+Go to https://account.mapbox.com/ to make an account to get a free API key. Place in .env file as "REACT_APP_MAP_API_KEY=<your api key here>"
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
