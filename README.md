@@ -1,6 +1,10 @@
 # Restaurant Recommendation Project
 
-This project utilizes Yelp Fusion API to help simplify the decision making process for choosing a restaurant to eat at
+I often come across the situation where I am trying to decide what to eat at the last minute and I can't decide or I mind numbingly scroll through Yelp getting overwhelmed by all the choices. I often want the decision made for me and I generally trust yelp to give me an option I like with their best match sorting. 
+
+That was my inspiration to create this project, which utilizes Yelp Fusion API to help simplify the decision making process for choosing a restaurant to eat at.
+
+This app would be suitable for indecisive people, people who don't have the time to do research especially at a moment's notice, and people who just don't want to make such a decision for one reason or the other.
 
 ## Installation
 
