@@ -12,7 +12,7 @@ This app would be suitable for indecisive people, people who don't have the time
 
 see client/server README.md files for installation instructions
 
-## Usage
+## Usage/Features
 
 Preliminary notes: This app prototype is designed to be used in mobile view.
 
