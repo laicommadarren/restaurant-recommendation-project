@@ -1,18 +1,28 @@
 # Restaurant Recommendation Project
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Installation](#installation)
+- [Features](#features)
+- [Preview](#preview)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
+
+## Overview
+
 I often come across the situation where I am trying to decide what to eat at the last minute and I can't decide or I mind numbingly scroll through Yelp getting overwhelmed by all the choices. I often want the decision made for me and I generally trust yelp to give me an option I like with their best match sorting. 
 
 That was my inspiration to create this project, which utilizes Yelp Fusion API to help simplify the decision making process for choosing a restaurant to eat at.
 
 This app would be suitable for indecisive people, people who don't have the time to do research especially at a moment's notice, and people who just don't want to make such a decision for one reason or the other.
 
-
-
 ## Installation
 
 see client/server README.md files for installation instructions
 
-## Usage/Features
+## Features
 
 Preliminary notes: This app prototype is designed to be used in mobile view.
 
@@ -78,13 +88,14 @@ Clicking "more info: Yelp.com" button will redirect to the Yelp page of the sele
 
 Clicking "Choose a different restaurant" will go back to the previous page where you can scan through the restaurants.
 
-## Contributing
+## Preview
 
-
+[Project Demo](https://youtu.be/OQdE51V5H1c)
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
 ## Contact
 
 LinkedIn:
